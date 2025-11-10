@@ -1,0 +1,38 @@
+{
+  "name": "chiffonated",
+  "version": "1.0.0",
+  "description": "An online ordering system for a cake business.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "firebase": "^9.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "homepage": ".",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
