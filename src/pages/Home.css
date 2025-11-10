@@ -1,0 +1,95 @@
+/* Minimal plain-CSS styles for Home.js components.
+   Add or adjust colors, fonts, and images to match your brand. */
+
+/* Basic layout helpers */
+:root{
+  --max-width:1200px; /* increased from 1100px */
+  --gutter:16px;
+  --accent:#d96459;
+  --accent-dark:#b84a3f;
+  --muted:#666;
+  --bg:#ffffff;
+  --surface:#f9f7f6;
+  --radius:8px;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#222}
+
+/* page container */
+.home-page{min-height:100vh}
+.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 32px} /* increased side padding */
+
+/* Sections */
+.section-hero{padding:48px 0;background:linear-gradient(180deg,#fff 0%,var(--surface)100%)}
+.section-about,.section-featured,.section-cta{padding:40px 0}
+
+/* Hero */
+.hero-inner{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.hero-text{flex:1 1 420px;min-width:280px}
+.hero-title{margin:0 0 12px;font-size:2.25rem;line-height:1.05;color:#111}
+.hero-subtitle{margin:0 0 18px;color:var(--muted);font-size:1rem}
+.hero-actions{margin-top:8px}
+
+/* Hero image placeholder (use background-image or <img>) */
+.hero-image{flex:0 0 360px;height:220px;border-radius:var(--radius);background:linear-gradient(135deg,#ffeef0 0%,#fff 100%)}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 16px;border-radius:6px;border:none;cursor:pointer;font-weight:600;text-decoration:none;color:#fff;background:var(--accent);transition:background .15s,transform .06s}
+.btn:active{transform:translateY(1px)}
+.btn:focus{outline:2px solid rgba(0,0,0,.08);outline-offset:2px}
+.btn-primary{background:var(--accent)}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-secondary{background:transparent;color:var(--accent);border:1px solid rgba(217,100,89,.12);padding:8px 14px}
+.btn-secondary:hover{background:rgba(217,100,89,.06)}
+
+/* About */
+.section-about h2{margin-top:0}
+.section-about p{color:var(--muted);margin:0.5rem 0 0}
+
+/* Featured products */
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.product-grid{display:grid;gap:24px;grid-template-columns:repeat(3,1fr);width:100%} /* force 3 columns */
+
+/* Minimal ProductCard expectations (adjust if ProductCard uses different classes) */
+.product-card{width:100%;height:100%;background:#fff;border-radius:8px;border:1px solid #eee;padding:16px;display:flex;flex-direction:column;gap:8px}
+.product-card .product-image{width:100%;height:240px;border-radius:6px;background-size:cover;background-position:center} /* taller images */
+.product-card .product-name{font-weight:700;margin:0}
+.product-card .product-price{color:var(--muted);margin-top:auto}
+
+/* Loading state */
+.loading{color:var(--muted);padding:12px 0}
+
+/* CTA */
+.section-cta{background:linear-gradient(90deg,#fff 0%,#fffaf8 100%)}
+.cta-inner{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta-text{flex:1 1 420px}
+.cta-action{flex:0 0 auto}
+
+/* Responsive */
+@media (max-width:1024px){
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width:720px){
+  .hero-inner{gap:12px}
+  .hero-image{width:100%;height:180px;order:2}
+  .hero-text{order:1}
+  .cta-inner{flex-direction:column;align-items:stretch}
+  .cta-action{width:100%;display:flex;justify-content:center}
+}
+
+@media (max-width:640px) {
+  .container {
+    padding: 0 16px; /* smaller padding on mobile */
+  }
+  
+  .product-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+}
+
+/* utilities */
+.text-muted{color:var(--muted);font-size:.95rem}

@@ -1,0 +1,151 @@
+.orders-page {
+    padding: 24px 0;
+    min-height: calc(100vh - 64px);
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.orders-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+/* Auth prompt for signed-out users */
+.auth-prompt {
+    text-align: center;
+    padding: 48px 0;
+}
+
+.auth-prompt h2 {
+    margin-bottom: 16px;
+    color: var(--muted);
+}
+
+/* Empty state */
+.no-orders {
+    text-align: center;
+    padding: 48px 0;
+    color: var(--muted);
+}
+
+/* Orders list */
+.orders-list {
+    display: grid;
+    gap: 20px;
+}
+
+.order-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.order-header h2 {
+    margin: 0 0 4px;
+    font-size: 1.1rem;
+}
+
+.order-date {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.order-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+/* Order items */
+.order-items {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    margin-bottom: 16px;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.item-quantity {
+    color: var(--muted);
+}
+
+.item-price {
+    font-weight: 600;
+}
+
+/* Delivery details */
+.order-delivery {
+    margin-bottom: 16px;
+}
+
+.order-delivery h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.order-delivery p {
+    margin: 4px 0;
+    color: var(--muted);
+}
+
+/* Order footer */
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total {
+    font-weight: 600;
+}
+
+.order-total span:first-child {
+    color: var(--muted);
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .orders-page {
+        padding: 16px 0;
+    }
+
+    .order-card {
+        padding: 16px;
+    }
+
+    .order-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .order-status {
+        align-self: flex-start;
+    }
+}

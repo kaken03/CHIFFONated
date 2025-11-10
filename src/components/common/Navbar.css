@@ -1,0 +1,139 @@
+:root {
+  --nav-bg: #ffffff;
+  --nav-border: #eee;
+  --accent: #d96459;
+  --accent-dark: #b84a3f;
+  --text: #111;
+  --muted: #666;
+  --gap: 12px;
+}
+
+/* Header wrapper */
+.site-header {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  width: 100%;
+}
+
+/* container aligns with other .container usages */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+}
+
+/* Toggle button (mobile menu) */
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animation for X when menu is open */
+.nav-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Nav links (desktop) */
+.nav-links {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background .12s ease, color .12s ease;
+}
+.nav-link:hover { background: rgba(0,0,0,0.03); }
+.nav-link.active { color: var(--accent); }
+
+/* CTA inside nav */
+.nav-cta {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.nav-cta:hover { background: var(--accent-dark); }
+
+/* Responsive: collapse to hamburger */
+@media (max-width: 880px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    padding: 12px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+    opacity: 0;
+    transform: translateY(-8px) scale(.98);
+    pointer-events: none;
+    transition: opacity .16s ease, transform .16s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .nav-link { padding: 10px; }
+  .nav-cta { display: block; text-align: center; }
+}

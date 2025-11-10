@@ -1,0 +1,127 @@
+.products-page {
+    padding: 24px 0;
+    min-height: calc(100vh - 64px);
+}
+
+/* Header */
+.products-header {
+    margin-bottom: 24px;
+}
+
+.products-header h1 {
+    margin: 0 0 16px;
+    font-size: 1.75rem;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin-bottom: 16px;
+}
+
+.search-bar input {
+    width: 100%;    
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(217,100,89,0.1);
+}
+
+/* Layout */
+.products-content {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+}
+
+/* Filters */
+.products-filters {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+    padding: 16px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+}
+
+.filter-section {
+    margin-bottom: 24px;
+}
+
+.filter-section h3 {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.filter-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 4px 0;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+.filter-btn:hover {
+    background: #f5f5f5;
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: white;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.price-inputs input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+/* Products Grid */
+.products-main {
+    flex: 1;
+}
+
+.products-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.sort-select {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .products-content {
+        grid-template-columns: 1fr;
+    }
+
+    .products-filters {
+        position: static;
+        margin-bottom: 16px;
+    }
+}
